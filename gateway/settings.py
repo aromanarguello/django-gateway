@@ -12,8 +12,17 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+# import environ
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# env = environ.Env()
+# root_path = environ.Path(__file__) - 2
+# ENV = env('DJANGO_ENV')
+# DEBUG = env.bool('DEBUG', default=False)
+# SECRET_KEY = env('SECRET_KEY')
+# DATABASES = {'default':env.db('DATABASE_URL')}
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +35,7 @@ SECRET_KEY = 'vh3_$v_w6+ru6l+9rxt_0e7fb!n%ei^aunbs7#0^#hbw9cj0xs'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CELERY_BROKER_URL = env('CELERY_BROKER_URL')
 
 # Application definition
 
